@@ -174,24 +174,9 @@ header{animation:enterPage .65s ease-out both}
 @media(max-width:900px){.ft .fb{grid-column:auto}}
 @media(max-width:600px){.ft{grid-template-columns:1fr}.cert img{height:auto;aspect-ratio:auto}}
 
-/* Original platform artwork from the supplied reference, displayed as a sprite. */
 .fp{border-top:1px solid var(--bd);padding-top:30px;margin-top:34px;text-align:center}
 .fp h4{font-size:.72rem;letter-spacing:.14em;font-weight:600;color:var(--mu)}
-.platform-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;direction:ltr;margin:20px auto 38px}
-.platform-icon{width:72px;height:72px;flex:0 0 72px;display:grid;place-items:center;background:#0d1013;border:1px solid #2a2d32;border-radius:20px;transition:transform .2s,border-color .2s,box-shadow .2s}
 a.platform-icon:hover{transform:translateY(-4px);border-color:var(--ac);box-shadow:0 8px 24px rgba(56,189,248,.14)}
-.platform-art{display:block;width:52px;height:52px;border-radius:15px;background-image:url('assets/footer-icons-reference.png');background-repeat:no-repeat;background-size:1880px 595px}
-@media(max-width:600px){.platform-icons{gap:10px}.platform-icon{width:64px;height:64px;flex-basis:64px;border-radius:17px}}
-.platform-0{background-position:-523px -399px}
-.platform-1{background-position:-613px -399px}
-.platform-2{background-position:-702px -399px}
-.platform-3{background-position:-792px -399px}
-.platform-4{background-position:-882px -399px}
-.platform-5{background-position:-971px -399px}
-.platform-6{background-position:-1061px -399px}
-.platform-7{background-position:-1150px -399px}
-.platform-8{background-position:-1240px -399px}
-.platform-9{background-position:-1329px -399px}
 
 /* Ambient background: transforms only; decorative and never intercepts input. */
 body{isolation:isolate}
@@ -237,5 +222,16 @@ header .ic:hover{box-shadow:0 0 18px color-mix(in srgb,var(--ac) 18%,transparent
 @keyframes intro-glow{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.site-intro{display:none}.intro-playing{overflow:auto}.intro-playing>header,.intro-playing>main,.intro-playing>footer{visibility:visible}}
 
-/* Freelance platform logos */
-.platform-logo{display:block;width:44px;height:44px;object-fit:contain;border-radius:12px}
+/* Freelance platform logos: 5 tiles that always fit on one row */
+.platform-icons{display:grid;grid-template-columns:repeat(5,minmax(0,72px));justify-content:center;gap:clamp(8px,2.5vw,16px);direction:ltr;margin:20px auto 38px;padding-inline:4px}
+.platform-icon{display:grid;place-items:center;width:100%;aspect-ratio:1/1;background:#0d1013;border:1px solid #2a2d32;border-radius:clamp(14px,3.5vw,20px);transition:transform .2s,border-color .2s,box-shadow .2s}
+a.platform-icon:hover,a.platform-icon:focus-visible{transform:translateY(-4px);border-color:var(--ac);box-shadow:0 8px 24px rgba(56,189,248,.14)}
+.platform-logo{display:block;width:62%;height:62%;object-fit:contain;border-radius:12px}
+
+/* Project filter + design viewer */
+#pf{margin-bottom:22px}
+dialog#dm{border:1px solid var(--bd);background:var(--bg2);color:var(--tx);border-radius:18px;padding:14px;width:min(1000px,94vw);max-width:none;max-height:92vh;overflow:auto;box-shadow:var(--sh);margin:auto}
+dialog#dm::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+dialog#dm img{display:block;width:100%;height:auto;max-height:80vh;object-fit:contain;border-radius:12px}
+dialog#dm h3{margin:12px 6px 4px;font-size:1rem}
+dialog#dm .x{position:absolute;top:10px;inset-inline-end:10px;z-index:2}
