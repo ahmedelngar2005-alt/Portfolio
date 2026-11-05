@@ -223,7 +223,7 @@ header .ic:hover{box-shadow:0 0 18px color-mix(in srgb,var(--ac) 18%,transparent
 @media(prefers-reduced-motion:reduce){.site-intro{display:none}.intro-playing{overflow:auto}.intro-playing>header,.intro-playing>main,.intro-playing>footer{visibility:visible}}
 
 /* Freelance platform logos: 5 tiles that always fit on one row */
-.platform-icons{display:grid;grid-template-columns:repeat(5,minmax(0,72px));justify-content:center;gap:clamp(8px,2.5vw,16px);direction:ltr;margin:20px auto 38px;padding-inline:4px}
+.platform-icons{display:grid;grid-template-columns:repeat(3,minmax(0,72px));justify-content:center;gap:clamp(8px,2.5vw,16px);direction:ltr;margin:20px auto 38px;padding-inline:4px}
 .platform-icon{display:grid;place-items:center;width:100%;aspect-ratio:1/1;background:#0d1013;border:1px solid #2a2d32;border-radius:clamp(14px,3.5vw,20px);transition:transform .2s,border-color .2s,box-shadow .2s}
 a.platform-icon:hover,a.platform-icon:focus-visible{transform:translateY(-4px);border-color:var(--ac);box-shadow:0 8px 24px rgba(56,189,248,.14)}
 .platform-logo{display:block;width:62%;height:62%;object-fit:contain;border-radius:12px}
